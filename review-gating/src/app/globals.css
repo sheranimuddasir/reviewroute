@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Warm, trustworthy palette — amber/stone tones */
+  --background: #faf9f7;
+  --foreground: #1c1917;
+  --accent: #b45309;
+  --accent-hover: #92400e;
+  --accent-light: #fef3c7;
+  --accent-muted: #d97706;
+  --muted: #78716c;
+  --border: #e7e5e4;
+  --card: #ffffff;
+  --success: #15803d;
+  --success-light: #dcfce7;
+  --warning: #c2410c;
+  --warning-light: #fff7ed;
+  --danger: #b91c1c;
+  --danger-light: #fef2f2;
+  --info: #1d4ed8;
+  --info-light: #eff6ff;
+
+  /* Status colors for review states */
+  --status-new: #2563eb;
+  --status-new-bg: #eff6ff;
+  --status-read: #6b7280;
+  --status-read-bg: #f3f4f6;
+  --status-resolved: #16a34a;
+  --status-resolved-bg: #f0fdf4;
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  /* Spacing rhythm (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+}
+
+.dark {
+  --background: #0c0a09;
+  --foreground: #fafaf9;
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --accent-light: #451a03;
+  --accent-muted: #fbbf24;
+  --muted: #a8a29e;
+  --border: #292524;
+  --card: #1c1917;
+  --success: #22c55e;
+  --success-light: #052e16;
+  --warning: #fb923c;
+  --warning-light: #431407;
+  --danger: #f87171;
+  --danger-light: #450a0a;
+  --info: #60a5fa;
+  --info-light: #1e3a5f;
+
+  --status-new: #60a5fa;
+  --status-new-bg: #1e3a5f;
+  --status-read: #9ca3af;
+  --status-read-bg: #1f2937;
+  --status-resolved: #4ade80;
+  --status-resolved-bg: #052e16;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
+  --color-accent-muted: var(--accent-muted);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-warning: var(--warning);
+  --color-warning-light: var(--warning-light);
+  --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
+  --color-info: var(--info);
+  --color-info-light: var(--info-light);
+  --color-status-new: var(--status-new);
+  --color-status-new-bg: var(--status-new-bg);
+  --color-status-read: var(--status-read);
+  --color-status-read-bg: var(--status-read-bg);
+  --color-status-resolved: var(--status-resolved);
+  --color-status-resolved-bg: var(--status-resolved-bg);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal scroll on all pages */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Smooth transitions for interactive elements */
+button, a, input, textarea, select {
+  transition: all 0.15s ease;
+}
+
+/* Focus rings */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-light);
+  border-color: var(--accent);
+}
